@@ -1,0 +1,199 @@
+{
+    "MrHimarz": [
+        {
+            "name": "Harry Potter and the Philosopher's Stone",
+            "year": 2001,
+            "genre": "Fantasy",
+            "director": "Chris Columbus",
+            "duration": 152,
+            "country": "United Kingdom / United States",
+            "description": "Harry Potter and the Philosopher's Stone is a 2001 fantasy film...",
+            "rating": 7.1,
+            "actors": [
+                "Daniel Radcliffe",
+                "Rupert Grint",
+                "Emma Watson"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg"
+        },
+        {
+            "name": "Interstellar",
+            "description": "Interstellar is a 2014 epic science fiction film directed by Christopher Nolan. The story follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity as Earth becomes uninhabitable. The film explores themes of love, time dilation, survival, and the future of humankind.",
+            "rating": 8.6,
+            "genre": "Science Fiction",
+            "actors": [
+                "Matthew McConaughey",
+                "Anne Hathaway",
+                "Jessica Chastain",
+                "Michael Caine",
+                "Matt Damon",
+                "Casey Affleck",
+                "Mackenzie Foy"
+            ],
+            "poster": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+        },
+        {
+            "name": "Shrek",
+            "year": 2001,
+            "genre": "Animation",
+            "director": "Andrew Adamson, Vicky Jenson",
+            "duration": 90,
+            "country": "United States",
+            "description": "Shrek is a 2001 animated comedy film about an ogre who embarks on a quest to rescue Princess Fiona in order to reclaim the swamp where he lives. Along the way, he forms an unlikely friendship with a talkative donkey and discovers that Fiona has a surprising secret.",
+            "rating": 7.9,
+            "actors": [
+                "Mike Myers",
+                "Eddie Murphy",
+                "Cameron Diaz",
+                "John Lithgow"
+            ],
+            "poster": "https://m.media-amazon.com/images/S/pv-target-images/5a5cf867eb9d4fc1e5d44fa81bca4ced972e299967c7d040f5ff49fef7b49b51.jpg"
+        },
+        {
+            "name": "Stranger Things",
+            "description": "Stranger Things is an American television series created by the Duffer Brothers for Netflix...",
+            "rating": 8.3,
+            "genre": "science fiction",
+            "actors": [
+                "Winona Ryder",
+                "David Harbour",
+                "Finn Wolfhard",
+                "Millie Bobby Brown",
+                "Gaten Matarazzo",
+                "Caleb McLaughlin",
+                "Natalia Dyer",
+                "Charlie Heaton",
+                "Cara Buono",
+                "Matthew Modine",
+                "Noah Schnapp",
+                "Sadie Sink",
+                "Joe Keery",
+                "Dacre Montgomery",
+                "Sean Astin",
+                "Paul Reiser",
+                "Maya Hawke",
+                "Priah Ferguson",
+                "Brett Gelman",
+                "Linda Hamilton",
+                "Jamie Campbell Bower",
+                "Nell Fisher"
+            ],
+            "poster": "AgACAgQAAxkBAAIBwWlhLwcC9h-6bYIwN2Kf4yan1MrAAAIXDWsb3xcJU4AVknwCoUMAAQEAAwIAA3gAAzgE"
+        },
+        {
+            "name": "The Matrix",
+            "year": 1999,
+            "genre": "Science Fiction",
+            "director": "Lana Wachowski, Lilly Wachowski",
+            "duration": 136,
+            "country": "United States",
+            "description": "A hacker discovers the true nature of reality and joins a rebellion against intelligent machines.",
+            "rating": 8.7,
+            "actors": [
+                "Keanu Reeves",
+                "Laurence Fishburne",
+                "Carrie-Anne Moss",
+                "Hugo Weaving",
+                "Joe Pantoliano"
+            ],
+            "poster": "https://img2.rtve.es/n/16107976?w=1600"
+        },
+        {
+            "name": "The Lord of the Rings: The Fellowship of the Ring",
+            "year": 2001,
+            "genre": "Fantasy",
+            "director": "Peter Jackson",
+            "duration": 178,
+            "country": "New Zealand / United States",
+            "description": "The first part of the epic trilogy about a quest to destroy a powerful ring.",
+            "rating": 8.8,
+            "actors": [
+                "Elijah Wood",
+                "Ian McKellen",
+                "Viggo Mortensen",
+                "Orlando Bloom",
+                "Sean Astin",
+                "Cate Blanchett",
+                "Liv Tyler",
+                "Hugo Weaving"
+            ],
+            "poster": "https://ew.com/thmb/qqofw2-fYfIwaXB2eGSA3xbB7h4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/image-tout-5741441aeb5f4a46856513f92e182914.jpg"
+        },
+        {
+            "name": "Avatar",
+            "year": 2009,
+            "genre": "Science Fiction",
+            "director": "James Cameron",
+            "duration": 162,
+            "country": "United States",
+            "description": "A marine on an alien planet becomes involved in a conflict between humans and the native population.",
+            "rating": 7.8,
+            "actors": [
+                "Sam Worthington",
+                "Zoe Saldana",
+                "Sigourney Weaver",
+                "Stephen Lang",
+                "Giovanni Ribisi"
+            ],
+            "poster": "https://m.media-amazon.com/images/S/pv-target-images/48448d3f65992c3c9da909933f7fa659efe20d88becd4b62459bc62e0da1889a.jpg"
+        },
+        {
+            "name": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "year": 2003,
+            "genre": "Adventure",
+            "director": "Gore Verbinski",
+            "duration": 143,
+            "country": "United States",
+            "description": "A blacksmith teams up with a pirate captain to rescue a kidnapped woman from cursed sailors.",
+            "rating": 8.0,
+            "actors": [
+                "Johnny Depp",
+                "Orlando Bloom",
+                "Keira Knightley",
+                "Geoffrey Rush",
+                "Jack Davenport"
+            ],
+            "poster": "https://ntvb.tmsimg.com/assets/p32093_v_h10_aa.jpg?w=1280&h=720"
+        },
+        {
+            "name": "Titanic",
+            "year": 1997,
+            "genre": "Romance",
+            "director": "James Cameron",
+            "duration": 195,
+            "country": "United States",
+            "description": "A romantic drama set aboard the RMS Titanic...",
+            "rating": 7.9,
+            "actors": [
+                "Leonardo DiCaprio",
+                "Kate Winslet",
+                "Billy Zane",
+                "Kathy Bates",
+                "Bill Paxton"
+            ],
+            "poster": "https://m.media-amazon.com/images/I/811lT7khIrL._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+            "name": "Breaking Bad",
+            "year": 2008,
+            "genre": "Crime Drama",
+            "director": "Vince Gilligan",
+            "duration": 49,
+            "country": "United States",
+            "description": "Breaking Bad is an American crime drama television series...",
+            "rating": 9.5,
+            "actors": [
+                "Bryan Cranston",
+                "Aaron Paul",
+                "Anna Gunn",
+                "Dean Norris",
+                "Betsy Brandt",
+                "RJ Mitte",
+                "Bob Odenkirk",
+                "Jonathan Banks",
+                "Giancarlo Esposito"
+            ],
+            "poster": "https://es.web.img3.acsta.net/pictures/18/04/04/22/52/3191575.jpg"
+        }
+    ]
+}
