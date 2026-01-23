@@ -55,8 +55,7 @@ pip install -r requirements.txt
 
 
 3. Configure the bot token
-Create or edit the file config.py:
-BOT_TOKEN = "8560338551:AAHmPtimrZLNlbqSVF6UfgDI9vUo5R-tkRA"
+Create or edit the file config.py
 
 
 4. Run the bot
