@@ -114,9 +114,11 @@ async def search_movie(message: Message, state: FSMContext):
 
 
 @dp.message(MovieStates.search_query)
-async def get_search_query(message: Message, state: FSMContext):
-    username = message.from_user.username
+async def get_search_query(message: Message, state: FSMContext, callback_data: MovieCallback):
     query = message.text.lower()
+    movie_id = callback_data.id
+    movie_data = get_movies(username, movie_id=movie_id)
+    username = message.from_user.username
     movies_list = get_movies(username)
     results = [movie for movie in movies_list if query in movie['name'].lower()]
 
@@ -165,15 +167,17 @@ async def filter_movies(message: Message, state: FSMContext):
 
 @dp.message(MovieStates.filter_criteria)
 async def get_filter_criteria(message: Message, state: FSMContext):
-    movies_list = get_movies()
+    username = message.from_user.username
+    movies_list = get_movies(username)
+
     criteria = message.text.lower()
+
     movies_list = sorted(movies_list, key=lambda movie: movie['rating'])
-    filtered = list(
-        filter(
-            lambda movie: criteria in movie['genre'].lower() == criteria,
-            movies_list,
-        )
-    )
+
+    filtered = [
+        movie for movie in movies_list
+        if criteria in movie['genre'].lower()
+    ]
 
     if filtered:
         for movie in filtered:
@@ -193,18 +197,33 @@ async def delete_movie_command(message: Message, state: FSMContext):
 
 @dp.message(MovieStates.delete_query)
 async def get_delete_query(message: Message, state: FSMContext):
-    movies_list = get_movies()
+    username = message.from_user.username
+    query = message.text.strip().lower()
+    try:
+        movies_list = get_movies(username)
+    except:
+        await message.reply("User not found!")
+        return
 
-    movie_to_delete = message.text.lower()
+    movie_to_delete = None
     for movie in movies_list:
-        if movie_to_delete == movie['name'].lower():
-            delete_movie(movie)
-            await message.reply(f"Movie '{movie['name']}' has been deleted.")
-            await state.clear()
-            return
+        if movie.get("name", "").lower() == query:
+            movie_to_delete = movie
+            break
 
-    await message.reply("Movie not found.")
+    if not movie_to_delete:
+        await message.reply("Movie not found.")
+        await state.clear()
+        return
+
+    deleted = delete_movie(username, movie_to_delete, file_path="data.json")
+
+    if deleted:
+        await message.reply(f"Movie \"{movie_to_delete.get('name')}\" deleted.")
+    else:
+        await message.reply("Failed to delete movie.")
     await state.clear()
+
 
 
 # -------------------- Movie Edit --------------------
@@ -217,7 +236,8 @@ async def edit_movie_command(message: Message, state: FSMContext):
 @dp.message(MovieStates.edit_query)
 async def get_edit_query(message: Message, state: FSMContext):
     movie_to_edit = message.text.lower()
-    movies = get_movies()
+    username = message.from_user.username
+    movies = get_movies(username)
     for movie in movies:
         if movie_to_edit == movie['name'].lower():
             await state.update_data(movie=movie)
@@ -230,16 +250,15 @@ async def get_edit_query(message: Message, state: FSMContext):
 
 @dp.message(MovieStates.edit_description)
 async def update_description(message: Message, state: FSMContext):
+    username = message.from_user.username
     data = await state.get_data()
     movie = data['movie']
     movie['description'] = message.text
-    edit_movie(movie)
+    edit_movie(username, movie)
     await message.reply(f"Movie '{movie['name']}' updated.")
     await state.clear()
 
 # -------------------- Movie Creation (FSM) --------------------
-
-
 @dp.message(MOVIE_CREATE_COMMAND)
 async def movie_create(message: Message, state: FSMContext) -> None:
     await state.set_state(MovieForm.name)
@@ -287,6 +306,7 @@ async def movie_actors(message: Message, state: FSMContext) -> None:
 @dp.message(MovieForm.poster)
 async def movie_poster(message: Message, state: FSMContext) -> None:
     poster_value = None
+    username = message.from_user.username
 
     if message.photo:
         poster_value = message.photo[-1].file_id
@@ -299,7 +319,7 @@ async def movie_poster(message: Message, state: FSMContext) -> None:
     data = await state.get_data()
 
     movie = Movie(**data)
-    add_movie(movie.model_dump())
+    add_movie(username, movie.model_dump())
 
     await state.clear()
     await message.answer(f"The movie '{movie.name}' has been successfully added!", reply_markup=None)
